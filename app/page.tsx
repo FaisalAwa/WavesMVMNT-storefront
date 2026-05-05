@@ -1,20 +1,23 @@
-import { Carousel } from "components/carousel";
-import { ThreeItemGrid } from "components/grid/three-items";
-import Footer from "components/layout/footer";
+import Banner from 'components/home/Banner';
+import FeaturedProducts from 'components/home/FeaturedProducts';
+import Hero from 'components/home/Hero';
+import Footer from 'components/layout/footer';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  description:
-    "High-performance ecommerce store built with Next.js, Vercel, and Shopify.",
+export const metadata: Metadata = {
+  title: 'Waves MVMNT — Premium Activewear',
+  description: 'Premium activewear designed for performance and style. Built for those who never stop moving.',
   openGraph: {
-    type: "website",
+    type: 'website',
   },
 };
 
 export default function HomePage() {
   return (
     <>
-      <ThreeItemGrid />
-      <Carousel />
+      <Hero />
+      <FeaturedProducts />
+      <Banner />
       <Footer />
     </>
   );

@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-primary: #1A1A2E;
+  --color-brand-secondary: #E94560;
+  --color-brand-accent: #D4AF37;
+  --color-surface: #F8F9FA;
+  --color-muted: #6C757D;
+  --font-heading: var(--font-playfair), 'Playfair Display', serif;
+  --font-body: var(--font-inter), 'Inter', sans-serif;
+}
+
 @plugin "@tailwindcss/container-queries";
 @plugin "@tailwindcss/typography";
 

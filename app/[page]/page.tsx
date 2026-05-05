@@ -8,7 +8,12 @@ export async function generateMetadata(props: {
   params: Promise<{ page: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const page = await getPage(params.page);
+  let page;
+  try {
+    page = await getPage(params.page);
+  } catch {
+    return notFound();
+  }
 
   if (!page) return notFound();
 
@@ -27,7 +32,12 @@ export default async function Page(props: {
   params: Promise<{ page: string }>;
 }) {
   const params = await props.params;
-  const page = await getPage(params.page);
+  let page;
+  try {
+    page = await getPage(params.page);
+  } catch {
+    return notFound();
+  }
 
   if (!page) return notFound();
 
